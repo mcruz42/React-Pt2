@@ -21,6 +21,7 @@ function MyApp() {
   )
 
 function removeOneCharacter (index) {
+   //axios.delete('http://localhost:5000/users/:id');         // added for backend delete
   const updated = characters.filter((character, i) => {
       return i !== index
     });
@@ -37,6 +38,7 @@ function removeOneCharacter (index) {
   async function makePostCall(person){
     try {
        const response = await axios.post('http://localhost:5000/users', person);
+       //response.id = response.data;
        return response;
     }
     catch (error) {
